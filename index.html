@@ -1,80 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-        }
-        
-        nav {
-            background-color: #444;
-            padding: 1rem;
-        }
-        
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 1rem;
-        }
-        
-        nav a:hover {
-            text-decoration: underline;
-        }
-        
-        main {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>André Parreira Soares – Portfolio</title>
+  <meta name="description" content="Portfolio von André Parreira Soares: Über mich, Skills, Privates und Kontakt.">
+  <meta name="theme-color" content="#2563eb">
+  <meta property="og:title" content="André Parreira Soares – Portfolio Page">
+  <meta property="og:description" content="Skills, Projekte aus der GitHub-API, Formel-1-Rangliste und Kontakt.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layout.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-    </header>
-    
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+  <noscript><p class="noscript">Diese Seite lädt Projekte, Diagramme und die Karte mit JavaScript. Bitte aktiviere JavaScript für den vollen Funktionsumfang.</p></noscript>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <a class="logo" href="#hero">André Parreira Soares</a>
+    <div class="header-actions">
+      <button id="theme-toggle" class="icon-btn" type="button" aria-pressed="false" aria-label="Whitemode/Darkmode aktivieren">🌙</button>
+      <button id="nav-toggle" class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menü">☰</button>
+    </div>
+    <nav id="site-nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="#about">Über mich</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#private">Privates</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
     </nav>
-    
-    <main>
-        <section id="home">
-            <h2>Home</h2>
-            <p>Hi! Welcome to my portfolio page.</p>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
-    </footer>
+  </header>
+
+  <main id="main">
+    <section id="hero">
+      <div>
+        <p class="hero__eyebrow">&lt;<hello-world&gt;</hello-world&gt;</p>
+        <h1>Hallo, ich bin André Parreira Soares</h1>
+        <p>Ich studiere Wirtschaftsinformatik an der Berner Fachhochschule.</p>
+        <div class="hero__actions">
+          <a class="btn" href="#skills">Skills &amp; Projekte</a>
+          <a class="btn btn--ghost" href="#contact">Kontakt aufnehmen</a>
+        </div>
+      </div>
+      <!-- <img class="hero__image" src="assets/" width="320" height="320" alt="Profilbild"> -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year">2026</span> André Parreira Soares · Berner Fachhoschule</p>
+  </footer>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
