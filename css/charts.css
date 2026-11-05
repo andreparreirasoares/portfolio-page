@@ -1,0 +1,82 @@
+/* ==========================================================
+   charts.css – Diagramme und Sprachbalken
+   ========================================================== */
+
+.lang-list {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lang-row {
+  display: grid;
+  grid-template-columns: 7rem 1fr 4rem;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.lang-row__name {
+  font-weight: 600;
+}
+
+.lang-row__bar {
+  height: 0.6rem;
+  overflow: hidden;
+  background: var(--border);
+  border-radius: 999px;
+}
+
+.lang-row__bar > span {
+  display: block;
+  height: 100%;
+  background: var(--primary);
+  border-radius: 999px;
+}
+
+.lang-row__value {
+  text-align: right;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Chart.js-Container ----------
+   Chart.js braucht einen Wrapper mit definierter Höhe, damit das Diagramm
+   responsiv skaliert (maintainAspectRatio: false). */
+.chart-box {
+  position: relative;
+  height: 18rem;
+  margin-bottom: var(--space-2);
+}
+
+.chart-box--radar {
+  height: 22rem;
+  margin: 0;
+}
+
+/* ---------- Skills-Balkendiagramm ---------- */
+.chart-box--bars {
+  height: 20rem;
+  margin-bottom: var(--space-1);
+}
+
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  margin: 0;
+  padding: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  list-style: none;
+}
+
+.chart-legend .swatch {
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-right: 0.4rem;
+  border-radius: 3px;
+}

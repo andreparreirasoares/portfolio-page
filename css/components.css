@@ -1,0 +1,186 @@
+/* ==========================================================
+   components.css – Karten, Chips, Timeline, Über-mich
+   ========================================================== */
+
+/* ---------- Profilbild ---------- */
+.hero__image {
+  justify-self: center;
+  width: min(18rem, 70%);
+  border-radius: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.hero__eyebrow {
+  margin-bottom: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--primary);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* ---------- Über mich ---------- */
+.about-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: var(--space-2);
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.facts li {
+  padding: var(--space-2);
+  text-align: center;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.facts strong {
+  display: block;
+  font-size: 1.6rem;
+  color: var(--primary);
+}
+
+/* ---------- Timeline ---------- */
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 1.5rem;
+  list-style: none;
+  border-left: 3px solid var(--border);
+}
+
+.timeline li {
+  position: relative;
+  padding-bottom: var(--space-3);
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: calc(-1.5rem - 9px);
+  top: 0.4rem;
+  width: 15px;
+  height: 15px;
+  background: var(--accent);
+  border: 3px solid var(--bg);
+  border-radius: 50%;
+}
+
+.timeline time {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.timeline h3 {
+  margin: 0.15rem 0;
+}
+
+.timeline p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* ---------- Chips ---------- */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  border-radius: 999px;
+}
+
+/* ---------- Karten ---------- */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: var(--space-3);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  margin: 0;
+}
+
+.card p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* ---------- Skills-Bereich ---------- */
+.skills-layout {
+  display: grid;
+  gap: var(--space-3);
+}
+
+@media (min-width: 48rem) {
+  .about-grid {
+    grid-template-columns: 1.3fr 1fr;
+  }
+}
+
+@media (min-width: 64rem) {
+  .skills-layout {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+/* ---------- Unterüberschriften innerhalb einer Sektion ---------- */
+.subhead {
+  margin: var(--space-5) 0 var(--space-2);
+  font-size: 1.4rem;
+}
+
+.lead {
+  max-width: 44rem;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Privates: Hobby-Karten ---------- */
+.hobby-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: var(--space-3);
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  list-style: none;
+}
+
+.subhead--tight {
+  margin-top: var(--space-3);
+  font-size: 1.1rem;
+}
+
+/* .lang-row / .lang-list stammen aus charts.css und werden hier für Sprachkenntnisse wiederverwendet */
+.about-grid .lang-row {
+  grid-template-columns: 6.5rem 1fr 7rem;
+}
