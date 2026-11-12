@@ -1,4 +1,4 @@
-// ui.js – kleine UI-Helfer: Theme, mobiles Menü, Scroll-Spy, Jahr
+// ui.js – Theme, mobiles Menü, Scroll-Spy, Jahr
 
 const THEME_KEY = 'pf-theme';
 
@@ -19,7 +19,6 @@ export function initTheme() {
   try {
     saved = localStorage.getItem(THEME_KEY);
   } catch {
-    /* localStorage evtl. blockiert */
   }
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   applyTheme(saved ?? (prefersDark ? 'dark' : 'light'));

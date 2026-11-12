@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/charts.css">
+  <link rel="stylesheet" href="css/projects.css">
 </head>
 <body>
   <noscript><p class="noscript">Diese Seite lädt Projekte, Diagramme und die Karte mit JavaScript. Bitte aktiviere JavaScript für den vollen Funktionsumfang.</p></noscript>
@@ -49,14 +50,14 @@
       <img class="hero__image" src="assets/Pic.jpg" width="320" height="320" alt="Profilbild">
     </section>
 
-        <section id="about">
+    <section id="about">
       <h2>Über mich</h2>
       <div class="about-grid">
         <div>
           <p class="lead">Ich bin André Parreira Soares, studiere an der Berner Fachhochschule und arbeite als IT-Nachwuchs bei der Mobiliar.</p>
           <ul class="facts" aria-label="Kennzahlen">
             <li><strong>4+</strong> Jahre Erfahrung</li>
-            <li><strong>5+</strong> Projekte</li>
+            <li><strong>2+</strong> Projekte</li>
             <li><strong>5</strong> Sprachen</li>
           </ul>
 
@@ -81,25 +82,114 @@
           <h3>Werdegang</h3>
           <ol class="timeline">
             <li>
-              <time datetime="2023-09">seit 09/2023</time>
-              <h3>Studium</h3>
-              <p>BSc Wirtschaftsinformatik an der Berner Fachhochschule.
-              </p>
-            </li>
-            <li>
               <time datetime="2024-11">seit 11/2024</time>
               <h3>Berufserfahrung</h3>
               <p>IT-Nachwuchs @Die Mobiliar</p>
+            </li>
+            <li>
+              <time datetime="2023-09">seit 09/2023</time>
+              <h3>Studium</h3>
+              <p>BSc Wirtschaftsinformatik an der Berner Fachhochschule.</p>
             </li>
           </ol>
         </div>
       </div>
     </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+
+      <div class="skills-layout">
+        <div>
+          <h3>Technologien</h3>
+          <ul class="chips">
+            <li class="chip">HTML5</li>
+            <li class="chip">CSS3</li>
+            <li class="chip">JavaScript</li>
+            <li class="chip">Java</li>
+            <li class="chip">C++</li>
+            <li class="chip">Python</li>
+            <li class="chip">Spring Boot</li>
+            <li class="chip">Git &amp; GitHub</li>
+            <li class="chip">REST-APIs</li>
+            <li class="chip">Responsive Design</li>
+            <li class="chip">Accessibility</li>
+          </ul>
+        </div>
+        <article class="card">
+          <h3>Kenntnisstand</h3>
+          <div class="chart-box chart-box--bars">
+            <canvas id="skills-chart" role="img" aria-label="Balkendiagramm meiner Skills: HTML 85, CSS 85, JavaScript 70, Java 80, C++ 65, Python 50, Spring Boot 70, Git 65, REST-APIs 60, Accessibility 55, Testing 45 Prozent"></canvas>          <ul id="skills-legend" class="chart-legend" aria-label="Legende"></ul>
+        </article>
+      </div>
+
+      <h3 class="subhead">Aus meinen GitHub-Repositories</h3>
+      <p id="stats-status" class="status" role="status" aria-live="polite"></p>
+      <div class="stats-grid">
+        <article class="card">
+          <h3>Sprachen in meinen Repositories</h3>
+          <div class="chart-box"><canvas id="language-chart" role="img" aria-label="Sprachverteilung"></canvas></div>
+          <ul id="language-list" class="lang-list"></ul>
+        </article>
+        <article class="card">
+          <h3>Code-Menge pro Repository</h3>
+          <div class="chart-box"><canvas id="repo-chart" role="img" aria-label="Code-Menge pro Repository"></canvas></div>
+        </article>
+      </div>
+
+      <h3 class="subhead" id="projects">Projekte</h3>
+      <p id="projects-status" class="status" role="status" aria-live="polite"></p>
+
+      <form class="toolbar" role="search" aria-label="Projekte filtern" onsubmit="return false">
+        <div class="field">
+          <label for="filter-query">Suche</label>
+          <input id="filter-query" type="search" placeholder="Name, Beschreibung oder Thema" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="filter-language">Sprache</label>
+          <select id="filter-language">
+            <option value="">Alle</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="filter-sort">Sortierung</label>
+          <select id="filter-sort">
+            <option value="updated">Zuletzt aktualisiert</option>
+            <option value="stars">Meiste Sterne</option>
+            <option value="name">Name (A–Z)</option>
+          </select>
+        </div>
+      </form>
+
+      <p id="projects-count" class="status" aria-live="polite"></p>
+      <ul id="projects-list" class="repo-grid"></ul>
+      <nav id="projects-pager" class="pager" aria-label="Seitennavigation der Projekte"></nav>
+
+      <p id="api-stats" class="status api-stats"></p>
+
+      <details class="auth-box">
+        <summary>GitHub-API-Limit erhöhen (optional, Authentifizierung)</summary>
+        <form id="token-form">
+          <p>Ohne Anmeldung erlaubt GitHub 60 Anfragen pro Stunde. Mit einem persönlichen Access Token (ohne zusätzliche Berechtigungen) sind es 5000. Das Token wird nur in diesem Browser-Tab gespeichert (<code>sessionStorage</code>) und nie weitergegeben.</p>
+          <div class="field">
+            <label for="token-input">Personal Access Token</label>
+            <input id="token-input" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_…">
+          </div>
+          <div class="hero__actions">
+            <button class="btn" type="submit">Token verwenden</button>
+            <button class="btn btn--ghost" type="button" id="token-clear" hidden>Token entfernen</button>
+          </div>
+          <p id="token-state" class="status"></p>
+        </form>
+      </details>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; <span id="year">2026</span> André Parreira Soares · Berner Fachhoschule</p>
+    <p>&copy; <span id="year">2026</span> André Parreira Soares · Berner Fachhochschule</p>
   </footer>
+  <!-- defer, damit es vor main.js geladen ist -->
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.js"></script>
   <script type="module" src="js/main.js"></script>
 </body>
 </html>

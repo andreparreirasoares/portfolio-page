@@ -1,6 +1,4 @@
 // dom.js – kleiner Helfer zum sicheren Erzeugen von DOM-Elementen.
-// Es wird bewusst textContent statt innerHTML verwendet: Daten aus der API
-// (Beschreibungen, Namen) können beliebigen Text enthalten und dürfen nie als HTML interpretiert werden (XSS).
 
 /**
  * h('a', { href: '...', class: 'btn' }, 'Text', andereElemente)
